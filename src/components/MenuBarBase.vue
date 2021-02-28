@@ -4,7 +4,7 @@
       <!-- NOTE LOGO -->
       <router-link class="navbar-brand" to="/OYO/home">
         <slot name="nav_logo">
-          <i class="nf nf-dev-python"></i>
+          <img id="logo" src="@/assets/OYO LOGO.png" alt="LOGO" />
         </slot>
       </router-link>
       <button
@@ -51,9 +51,8 @@ export default {
 .navbar-brand {
   letter-spacing: 9px;
 }
-.nf {
-  color: #de1a1a;
-  font-size: 1.5em;
+#logo {
+  width: 30px;
 }
 .navbar-brand,
 .nav-item {
