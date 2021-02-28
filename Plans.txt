@@ -1,4 +1,7 @@
+TODO 登录 v-model 获取输入的密码，没有则为空 (最好检测一下)
+
 TODO Javascripts 对 HTTP 请流程
 TODO Javascripts 对请求头的解析获取
 TODO jupyter 的工作流程
 TODO 设计不同页面的 CSS 样式
+TODO Vuex 学习 (拦截验证登录，会话数据保存)
