@@ -1,8 +1,7 @@
-# Vue 的模板 OAO
+# Jupyter With Vue
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-
 [![Build Vue](https://github.com/allinu/OYO/actions/workflows/vue-page.yml/badge.svg)](https://github.com/allinu/OYO/actions/workflows/vue-page.yml)
 ---
 
@@ -34,7 +33,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://allinu.github.io/"><img src="https://avatars.githubusercontent.com/u/32992109?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Allinu</b></sub></a><br /><a href="#infra-allinu" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/allinu/OAO/commits?author=allinu" title="Tests">⚠️</a> <a href="https://github.com/allinu/OAO/commits?author=allinu" title="Code">💻</a></td>
+    <td align="center"><a href="https://allinu.github.io/"><img src="https://avatars.githubusercontent.com/u/32992109?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Allinu</b></sub></a><br /><a href="#infra-allinu"title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/allinu/OAO/commits?author=allinu"title="Tests">⚠️</a> <a href="https://github.com/allinu/OAO/commits?author=allinu"title="Code">💻</a></td>
   </tr>
 </table>
 
