@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Build Vue
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build_vue:
+    runs-on: ubuntu-latest
+    name: Build Vue
+    steps:
+    - uses: actions/checkout@v2
+    - uses: sergioramos/yarn-actions/install@v6
+      with:
+        frozen-lockfile: true
+    - id: Build-Vue
+      uses: allinu/VuePagesAction@v1
+      with:
+        username: 'allinu'
+        reponame: 'OAO'
+        token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged

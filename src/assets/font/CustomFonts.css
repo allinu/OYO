@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "SCR";
+  src: url("./fonts/Smartisan_Compact-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SCT";
+  src: url("./fonts/Smartisan_Compact-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SCL";
+  src: url("./fonts/Smartisan_Compact-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SCM";
+  src: url("./fonts//Smartisan_Compact-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SCB";
+  src: url("./fonts/Smartisan_Compact-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SCH";
+  src: url("./fonts/Smartisan_Compact-Heavy.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NFR";
+  src: url("./fonts/Fira\ Code\ Regular\ Nerd\ Font\ Complete.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "NFM";
+  src: url("./fonts/Fira\ Code\ Medium\ Nerd\ Font\ Complete.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "NFB";
+  src: url("./fonts/Fira\ Code\ Bold\ Nerd\ Font\ Complete.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "YRDR";
+  src: url("./fonts/YangRenDongZhuShiTi-Regular-2.ttf")
+  format("truetype");
+}
+@font-face {
+  font-family: "YRDM";
+  src: url("./fonts/YangRenDongZhuShiTi-Medium-2.ttf")
+  format("truetype");
+}
+@font-face {
+  font-family: "YRDB";
+  src: url("./fonts/YangRenDongZhuShiTi-Bold-2.ttf")
+  format("truetype");
+}
+@font-face {
+  font-family: "YRDH";
+  src: url("./fonts/YangRenDongZhuShiTi-Heavy-2.ttf")
+  format("truetype");
+}
+@font-face {
+  font-family: "YRDE";
+  src: url("./fonts/YangRenDongZhuShiTi-Extralight-2.ttf")
+  format("truetype");
+}

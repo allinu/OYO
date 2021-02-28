@@ -1,0 +1,13 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "include": [
+    "src/**/*",
+    "public/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
