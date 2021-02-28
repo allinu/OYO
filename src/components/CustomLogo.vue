@@ -1,6 +1,6 @@
 <template>
   <div id="logo">
-    <i class="nf nf-dev-python"></i>
+    <img src="@/assets/OYO LOGO.png" alt="LOGO" />
   </div>
 </template>
 
@@ -17,10 +17,8 @@ export default {
 </script>
 
 <style scoped>
-#logo {
-  letter-spacing: 0.45em;
-}
-#logo .nf {
-  color: red;
+#logo img {
+  width: 20vw;
+  /* height: 10vh; */
 }
 </style>
