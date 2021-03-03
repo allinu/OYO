@@ -1,0 +1,137 @@
+{
+  "editor.formatOnSave": true,
+  // ======================================= -todo-tree设置
+  "todo-tree.general.tags": [
+    "HEADER",
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "NOTE",
+    "INFO",
+    "INPUT",
+    "OUTPUT",
+    "IDEA"
+  ],
+  "todo-tree.general.tagGroups": {
+    "FIXME": [
+      "FIXME",
+      "FIXIT",
+      "FIX"
+    ],
+    "INFO": [
+      "INFO",
+      "info",
+      "*"
+    ],
+    "NOTE": [
+      "NOTE",
+      "!"
+    ],
+    "BUG": [
+      "BUG",
+      "?"
+    ]
+  },
+  "todo-tree.tree.autoRefresh": true,
+  "todo-tree.tree.showScanModeButton": false,
+  "todo-tree.highlights.defaultHighlight": {
+    // "icon": "alert",
+    "type": "tag",
+    "foreground": "black",
+    "background": "white",
+    "fontWeight": "bold",
+    "borderRadius": "5px",
+    "opacity": 100
+    // "iconColour": "blue"
+  },
+  "todo-tree.highlights.customHighlight": {
+    "HEADER": {
+      "icon": "check-circle",
+      "type": "whole-line",
+      "hideFromTree": true,
+      "foreground": "#ff046f",
+      "background": "#0e2662",
+      "iconColour": "#ff046f"
+    },
+    "TODO": {
+      "icon": "check-circle",
+      "type": "text-and-comment",
+      "foreground": "black",
+      "background": "#FF8C00",
+      "iconColour": "#FF8C00"
+    },
+    "NOTE": {
+      "icon": "clippy",
+      "type": "text-and-comment",
+      "foreground": "white",
+      "background": "#ff046f",
+      "iconColour": "#ff046f"
+    },
+    "INFO": {
+      "icon": "clippy",
+      "type": "text-and-comment",
+      "foreground": "white",
+      "background": "#007e74",
+      "iconColour": "#007e74"
+    },
+    "INPUT": {
+      "type": "text-and-comment",
+      "foreground": "black",
+      "background": "#b4d9fb",
+      "iconColour": "#b4d9fb"
+    },
+    "OUTPUT": {
+      "type": "text-and-comment",
+      "foreground": "black",
+      "background": "#32ea8d",
+      "iconColour": "#32ea8d"
+    },
+    "FIXME": {
+      "icon": "alert",
+      "type": "line",
+      "foreground": "black",
+      "background": "#ffff22",
+      "iconColour": "#ffff22"
+    },
+    "BUG": {
+      "icon": "bug",
+      "type": "line",
+      "foreground": "black",
+      "background": "#ff0011",
+      "iconColour": "#ff0011"
+    },
+    "IDEA": {
+      "icon": "light-bulb",
+      "type": "tag",
+      "foreground": "black",
+      "background": "#21de5b",
+      "iconColour": "#21de5b"
+    },
+    "OTHER": {
+      "type": "line",
+      "foreground": "black",
+      "background": "#eeaaaa",
+      "iconColour": "#eeaaaa"
+    }
+  },
+  "todo-tree.filtering.excludeGlobs": [
+    "**/vendor/**",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/bower_components/**",
+    "**/build/**",
+    "**/.vscode/**",
+    "**/.github/**",
+    "**/_output/**",
+    "**/*.min.*",
+    "**/*.map"
+  ],
+  "cSpell.words": [
+    "axios",
+    "njsproj",
+    "ntvs",
+    "pnpm",
+    "xsrf"
+  ],
+}

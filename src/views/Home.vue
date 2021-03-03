@@ -4,13 +4,13 @@
 
     <div class="main">
       <CustomLogo class="logo" />
-      <h1>
+      <div class="content">
         <img src="@/assets/jupyter.png" alt="jupyter" />
         <i class="nf nf-fa-plus"></i>
         <img src="@/assets/vue.png" alt="vue" />
         <i class="nf nf-fae-equal"></i>
         <img src="@/assets/OYO LOGO.png" alt="vue" />
-      </h1>
+      </div>
     </div>
   </div>
 </template>
@@ -42,15 +42,17 @@ export default {
   transform: translate(-50%, 10%);
   overflow: hidden;
 }
-.main > h1 {
+.main > .content {
   margin-top: 50px;
   font-family: 'NFM', 'SCR';
 }
-.main > h1 > .nf {
-  color: rgba(0, 0, 0, 0.3);
+.main > .content > .nf {
+  color: rgba(0, 0, 0, 0.2);
   margin: 0 40px;
+  font-size: 40px;
+  vertical-align: super;
 }
-.main > h1 > img {
+.main > .content > img {
   width: 40px;
 }
 </style>

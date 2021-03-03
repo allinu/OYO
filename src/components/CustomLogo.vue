@@ -8,10 +8,7 @@
 export default {
   name: 'CustomLogo',
   data() {
-    return {
-      heartColor: 'red',
-      circleColor: 'black',
-    }
+    return {}
   },
 }
 </script>

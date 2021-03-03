@@ -1,29 +1,29 @@
 <template>
-  <div class="ui attached">
+  <div class="ui">
     <!-- NOTE 导航栏 -->
     <MenuBarBase></MenuBarBase>
     <!-- NOTE 下面显示路由主体内容 -->
-    <router-view />
+    <router-view :key="$route.path" />
     <!-- NOTE 下面显示页脚 -->
     <Footer></Footer>
   </div>
 </template>
 
 <script>
-import MenuBarBase from "@/components/MenuBarBase";
-import Footer from "@/components/Footer";
+import MenuBarBase from '@/components/MenuBarBase'
+import Footer from '@/components/Footer'
 export default {
-  name: "App",
+  name: 'App',
   components: {
     MenuBarBase,
     Footer,
   },
-};
+}
 </script>
 
 <style>
 * {
-  font-family: "NFM", "SCM";
+  font-family: 'NFM', 'SCM';
 }
 @keyframes hue {
   from {

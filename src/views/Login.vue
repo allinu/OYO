@@ -1,10 +1,16 @@
 <template>
   <div class="ui container"></div>
 </template>
+
 <script>
 export default {
-  name: 'Stars',
+  name: 'Login',
+
+  data() {
+    return {}
+  },
 }
 </script>
-<style scoped>
+
+<style lang="css" scoped>
 </style>
