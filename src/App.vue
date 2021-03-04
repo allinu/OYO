@@ -1,5 +1,5 @@
 <template>
-  <div class="ui">
+  <div>
     <!-- NOTE 导航栏 -->
     <MenuBarBase></MenuBarBase>
     <!-- NOTE 下面显示路由主体内容 -->
@@ -24,6 +24,10 @@ export default {
 <style>
 * {
   font-family: 'NFM', 'SCM';
+}
+body ::-webkit-scrollbar-track {
+  background: none;
+  border: none;
 }
 @keyframes hue {
   from {

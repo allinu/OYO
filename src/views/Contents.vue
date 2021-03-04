@@ -8,17 +8,29 @@
         <span class="divider nf nf-fa-chevron_right"> </span>
       </span>
     </div>
-    <div class="ui list">
-      <div class="item" v-for="(file, index) in ans.data.content" :key="index">
-        <span class=".nf nf-mdi-folder" v-if="file.type == 'directory'"></span>
-        <span class=".nf nf-mdi-file" v-if="file.type == 'notebook'"></span>
+    <div class="ui middle aligned list">
+      <div
+        class="ui item other"
+        v-for="(file, index) in ans.data.content"
+        :key="index"
+      >
+        <span
+          class=".nf nf-mdi-folder_outline"
+          v-if="file.type == 'directory'"
+        ></span>
+        <span
+          class=".nf nf-fa-file_text_o"
+          v-if="file.type == 'notebook'"
+        ></span>
         <a @click="post_route(file.name, 0)" v-if="file.type == 'directory'">{{
           file.name
         }}</a>
         <a @click="post_route(file.name, 1)" v-if="file.type == 'notebook'">{{
           file.name
         }}</a>
-        <span class="ui grey text">{{ format_date(file.last_modified) }}</span>
+        <span class="ui middle aligned right floated grey text">
+          {{ format_date(file.last_modified) }}</span
+        >
       </div>
     </div>
   </div>
@@ -76,7 +88,8 @@ export default {
           this.paths[i] != 'contents' &&
           this.paths[i] != 'file'
         ) {
-          tmp.push(this.paths[i])
+          // INFO 对URL中的中文进行解码(恢复中文)
+          tmp.push(decodeURIComponent(this.paths[i]))
         }
       }
       this.paths = tmp
@@ -115,5 +128,29 @@ a.section.nf {
   padding: 0 10px;
   font-size: 20px;
   line-height: 20px;
+}
+.ui.breadcrumb {
+  padding: 0 10px;
+}
+.ui.list {
+  height: 80vh;
+  padding: 10px;
+  overflow: scroll;
+  scrollbar-width: 0;
+}
+.ui.list >>> span.nf {
+  font-size: 20px;
+}
+.ui.item {
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 25px;
+  border-radius: 5px;
+}
+.item.other:hover {
+  background: rgba(0, 0, 0, 0.051);
+}
+.ui.item .ui.text {
+  line-height: 25px;
 }
 </style>

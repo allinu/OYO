@@ -1,6 +1,8 @@
 const webpack = require("webpack");
 module.exports = {
   publicPath: "/OYO/",
+  // INFO 实时渲染
+  runtimeCompiler: true,
   devServer: {
     port: 8080,
 

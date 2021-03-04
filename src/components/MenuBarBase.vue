@@ -29,6 +29,7 @@ export default {
 <style scoped>
 #logo {
   width: 30px;
+  margin-left: -25px;
 }
 .ui.secondary.menu .item {
   background: none;

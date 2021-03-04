@@ -5,6 +5,20 @@ import App from "./App.vue";
 import router from "./router";
 import $ from "jquery";
 
+import VueHighlightJS from "vue-highlight.js";
+
+// Highlight.js languages (Only required languages)
+import python from "highlight.js/lib/languages/python";
+
+import "highlight.js/styles/gruvbox-dark.css";
+
+Vue.use(VueHighlightJS, {
+  // Register only languages that you want
+  languages: {
+    python
+  }
+});
+
 Vue.config.productionTip = false;
 
 new Vue({
