@@ -15,17 +15,18 @@
         :key="index"
       >
         <span
-          class=".nf nf-mdi-folder_outline"
-          v-if="file.type == 'directory'"
+          class=".nf nf-mdi-folder"
+          style="color: #0c85d0"
+          v-if="file.type === 'directory'"
         ></span>
         <span
           class=".nf nf-fa-file_text_o"
-          v-if="file.type == 'notebook'"
+          v-if="file.type === 'notebook'"
         ></span>
-        <a @click="post_route(file.name, 0)" v-if="file.type == 'directory'">{{
+        <a @click="post_route(file.name, 0)" v-if="file.type === 'directory'">{{
           file.name
         }}</a>
-        <a @click="post_route(file.name, 1)" v-if="file.type == 'notebook'">{{
+        <a @click="post_route(file.name, 1)" v-if="file.type === 'notebook'">{{
           file.name
         }}</a>
         <span class="ui middle aligned right floated grey text">
@@ -54,6 +55,7 @@ export default {
   created() {
     this.get_files()
     this.get_paths()
+    this.sort_item()
   },
   methods: {
     get_files() {
@@ -83,10 +85,10 @@ export default {
       let tmp = []
       for (let i in this.paths) {
         if (
-          this.paths[i] != '' &&
-          this.paths[i] != 'OYO' &&
-          this.paths[i] != 'contents' &&
-          this.paths[i] != 'file'
+          this.paths[i] !== '' &&
+          this.paths[i] !== 'OYO' &&
+          this.paths[i] !== 'contents' &&
+          this.paths[i] !== 'file'
         ) {
           // INFO 对URL中的中文进行解码(恢复中文)
           tmp.push(decodeURIComponent(this.paths[i]))
@@ -99,16 +101,23 @@ export default {
       for (let i = 0; i <= index; i++) {
         path = path + this.paths[i] + '/'
       }
+      if (this.$route.path !== path){
       this.$router.push({
         path: path,
-      })
+      })}
     },
     click_path_home() {
       let path = '/OYO/contents/'
-      this.$router.push({
-        path: path,
-      })
+      if (this.$route.path !== path){
+        this.$router.push({
+          path: path,
+        }) 
+      }
     },
+    // TODO 文件夹置顶排序
+    sort_item(){
+        console.log(this.ans)
+    }
   },
   computed: {},
 }

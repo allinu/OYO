@@ -23,7 +23,7 @@ export default {
 
 <style>
 * {
-  font-family: 'NFM', 'SCM';
+  font-family: 'NFR', 'SCR',monospace;
 }
 body ::-webkit-scrollbar-track {
   background: none;
@@ -40,10 +40,8 @@ body ::-webkit-scrollbar-track {
 .colorful {
   border: none;
   border-radius: 5px;
-  background: linear-gradient(135deg, #fff, #fbb);
   animation: hue 6s linear infinite;
-  background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-attachment: fixed;
+  background: linear-gradient(135deg, #fff, #fbb) no-repeat fixed;
 }
 </style>

@@ -21,13 +21,10 @@
           >{{ cell.source }}
           </highlight-code
           >
-          <Markdown
+          <markdown-it-vue
             v-if="cell.cell_type === 'markdown'"
             :content="cell.source"
           />
-          <!-- <div class="actions">
-            <a class="type">{{ cell.cell_type }}</a>
-          </div> -->
         </div>
         <!-- INFO 输出部分 -->
         <a
@@ -74,7 +71,8 @@
                <img :src="make_img(output.data['image/png'])" /> 
             </div>
             <!-- INFO Markdown 显示 -->
-            <Markdown
+            <markdown-it-vue
+              class="md-body"
               v-if="
                 cell.cell_type === 'markdown' &&
                 Array.isArray(cell.outputs) &&
@@ -101,11 +99,7 @@
               input_content
             }}
           </highlight-code>
-          <Markdown v-if="type === 'markdown'" :content="input_content"/>
-
-          <!-- <div class="actions">
-            <a class="type">{{ type }}</a>
-          </div> -->
+          <markdown-it-vue class="md-body" v-if="type === 'markdown'" :content="input_content"/>
         </div>
       </div>
     </div>
@@ -134,14 +128,16 @@
 <script>
 const axios = require('axios')
 const moment = require('moment')
-import Markdown from '@/components/Markdown.vue'
-import 'github-markdown-css'
+import MarkdownItVue from 'markdown-it-vue'
+import 'markdown-it-vue/dist/markdown-it-vue.css'
 
 moment.locale('zh_CN')
 
 axios.defaults.withCredentials = true
 export default {
-  components: {Markdown},
+  components: {
+    MarkdownItVue
+  },
   name: 'File',
   data() {
     return {
@@ -279,5 +275,8 @@ a {
 
 .ui.comments .comment .actions a {
   color: rgba(115, 41, 235, 0.644);
+}
+.markdown-body >>> pre{
+  border-radius: 5px;
 }
 </style>

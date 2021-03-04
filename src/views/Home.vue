@@ -34,7 +34,6 @@ export default {
 .main {
   padding-top: 50px;
   text-align: center;
-  text-align: center;
   position: relative;
   height: 650px;
   top: 50%;
@@ -44,7 +43,7 @@ export default {
 }
 .main > .content {
   margin-top: 50px;
-  font-family: 'NFM', 'SCR';
+  font-family: 'NFM', 'SCR',monospace;
 }
 .main > .content > .nf {
   color: rgba(0, 0, 0, 0.2);
