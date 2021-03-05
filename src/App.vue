@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="animate__animated animate__fadeIn animate__faster">
     <!-- NOTE 导航栏 -->
     <MenuBarBase></MenuBarBase>
     <!-- NOTE 下面显示路由主体内容 -->

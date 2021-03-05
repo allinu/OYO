@@ -6,6 +6,7 @@ import File from "@/views/File";
 import Stars from "@/views/Stars";
 import Login from "@/views/Login";
 import Love from "@/views/Love";
+import Image from "@/views/Image";
 
 Vue.use(VueRouter);
 
@@ -34,6 +35,14 @@ const routes = [
     path: "/OYO/file*",
     name: "File",
     component: File,
+    meta: {
+      title: "文件"
+    }
+  },
+  {
+    path: "/OYO/image*",
+    name: "Image",
+    component: Image,
     meta: {
       title: "文件"
     }

@@ -1,10 +1,10 @@
 <template>
-  <div class="ui container">
+  <div class="ui container animate__animated animate__fadeIn animate__faster">
     <hr />
     <div class="ui aligned grid">
-      <span class="left floated left aligned six wide column"
-        >联系我：
-        <a :href="mail_to">{{ author_mail }}</a>
+      <span class="left floated left aligned six wide column">
+        <span class="nf nf-fa-paper_plane"></span>
+        <a :href="feedback_url"> 反馈/建议</a>
       </span>
       <span class="right floated right aligned six wide column"
         >版本：{{ version }}</span
@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       version: '1.0.0',
-      author_mail: 'lionacc@163.com',
+      feedback_url: 'https://github.com/allinu/OYO/issues/new',
     }
   },
   computed: {
@@ -33,4 +33,7 @@ export default {
 }
 </script>
 <style scoped>
+.ui.grid {
+  margin-top: 5px;
+}
 </style>

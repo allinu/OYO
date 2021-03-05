@@ -3,8 +3,8 @@
     <div class="main-bg"></div>
 
     <div class="main">
-      <CustomLogo class="logo" />
-      <div class="content">
+      <CustomLogo class="logo"/>
+      <div class="content animate__animated animate__fadeIn animate__faster">
         <img src="@/assets/jupyter.png" alt="jupyter" />
         <i class="nf nf-fa-plus"></i>
         <img src="@/assets/vue.png" alt="vue" />

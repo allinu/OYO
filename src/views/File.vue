@@ -1,6 +1,13 @@
 <template>
   <div class="ui container">
-    <div class="ui comments">
+    <Loader
+      v-show="loader === true"
+      class="animate__animated animate__fadeIn"
+    ></Loader>
+    <div
+      v-show="loader === false"
+      class="ui comments animate__animated animate__fadeIn"
+    >
       <div
         class="ui comment"
         v-for="(cell, index) in ans.content.cells"
@@ -18,9 +25,8 @@
           <highlight-code
             v-if="cell.cell_type !== 'markdown' && cell.source !== ''"
             lang="python"
-          >{{ cell.source }}
-          </highlight-code
-          >
+            >{{ cell.source }}
+          </highlight-code>
           <markdown-it-vue
             v-if="cell.cell_type === 'markdown'"
             :content="cell.source"
@@ -55,7 +61,7 @@
                 output.output_type === 'stream'
               "
               lang="python"
-            >{{ output.text }}
+              >{{ output.text }}
             </highlight-code>
             <!-- INFO 图像显示 -->
             <div
@@ -68,7 +74,7 @@
               "
               lang="python"
             >
-               <img :src="make_img(output.data['image/png'])" /> 
+              <img :src="make_img(output.data['image/png'])" />
             </div>
             <!-- INFO Markdown 显示 -->
             <markdown-it-vue
@@ -95,16 +101,19 @@
             <span class="date">{{ type }}</span>
           </div>
 
-          <highlight-code v-if="type === 'code'" lang="python">{{
-              input_content
-            }}
+          <highlight-code v-if="type === 'code'" lang="python"
+            >{{ input_content }}
           </highlight-code>
-          <markdown-it-vue class="md-body" v-if="type === 'markdown'" :content="input_content"/>
+          <markdown-it-vue
+            class="md-body"
+            v-if="type === 'markdown'"
+            :content="input_content"
+          />
         </div>
       </div>
     </div>
 
-    <form class="ui reply form">
+    <form v-show="loader === false" class="ui reply form">
       <div class="field">
         <textarea
           v-model="input_content"
@@ -112,12 +121,12 @@
         ></textarea>
       </div>
       <div class="ui inline fields">
-        <input type="radio" id="code" value="code" v-model="type"/>
+        <input type="radio" id="code" value="code" v-model="type" />
         <label for="code">Code</label>
-        <br/>
-        <input type="radio" id="markdown" value="markdown" v-model="type"/>
+        <br />
+        <input type="radio" id="markdown" value="markdown" v-model="type" />
         <label for="markdown">Markdown</label>
-        <br/>
+        <br />
       </div>
 
       <div class="ui blue submit button">发送</div>
@@ -126,6 +135,8 @@
 </template>
 
 <script>
+import Loader from '@/components/Loader'
+
 const axios = require('axios')
 const moment = require('moment')
 import MarkdownItVue from 'markdown-it-vue'
@@ -136,7 +147,8 @@ moment.locale('zh_CN')
 axios.defaults.withCredentials = true
 export default {
   components: {
-    MarkdownItVue
+    MarkdownItVue,
+    Loader,
   },
   name: 'File',
   data() {
@@ -196,10 +208,13 @@ export default {
         writable: true,
         type: 'notebook',
       },
+      loader: true,
     }
   },
+  // TODO 建立socket链接发送代码
   created() {
     this.get_files()
+    setInterval(this.set_loader, 2000)
   },
   methods: {
     get_files() {
@@ -222,10 +237,12 @@ export default {
     make_img(base64) {
       return 'data:image/png;base64,' + base64
     },
+    set_loader() {
+      this.loader = false
+    },
   },
   computed: {},
-  updated() {
-  },
+  updated() {},
 }
 </script>
 
@@ -276,7 +293,7 @@ a {
 .ui.comments .comment .actions a {
   color: rgba(115, 41, 235, 0.644);
 }
-.markdown-body >>> pre{
+.markdown-body >>> pre {
   border-radius: 5px;
 }
 </style>

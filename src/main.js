@@ -4,6 +4,7 @@ import "@/plugins/fomantic";
 import App from "./App.vue";
 import router from "./router";
 import $ from "jquery";
+import "@/plugins/animate"
 
 import VueHighlightJS from "vue-highlight.js";
 
