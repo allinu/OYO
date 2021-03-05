@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       version: '1.0.0',
-      feedback_url: 'https://github.com/allinu/OYO/issues/new',
+      feedback_url: 'https://github.com/allinu/OYO/issues/new/choose',
     }
   },
   computed: {
