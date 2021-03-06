@@ -1,20 +1,18 @@
 <template>
-  <div class="ui container">
-    <Loader></Loader>
-  </div>
+  <div class="ui container"></div>
 </template>
 
 <script>
-import Loader from "@/components/Loader";
-
 export default {
   name: 'Login',
-  components: {
-    Loader
-  },
+  components: {},
   data() {
-    return {}
+    return {
+      ans: {},
+    }
   },
+  methods: {},
+  created() {},
 }
 </script>
 

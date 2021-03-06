@@ -4,24 +4,22 @@
       v-show="loader === true"
       class="animate__animated animate__fadeIn"
     ></Loader>
+
     <div
       v-show="loader === false"
-      class="ui comments animate__animated animate__fadeIn"
+      class="ui middle aligned list animate__animated animate__fadeIn"
     >
       <div
-        class="ui comment"
+        class="ui item"
         v-for="(cell, index) in ans.content.cells"
         :key="index"
       >
         <!-- INFO 输入部分 -->
-        <a class="avatar" v-if="cell.source !== ''">
-          <span class="nf nf-fa-user_circle_o"></span>
-        </a>
-        <div class="content" v-if="cell.source !== ''">
-          <a class="author">YOU</a>
-          <div class="metadata">
-            <span class="date">{{ cell.cell_type }}</span>
-          </div>
+        <div
+          class="content source"
+          contenteditable="true"
+          v-if="cell.source !== ''"
+        >
           <highlight-code
             v-if="cell.cell_type !== 'markdown' && cell.source !== ''"
             lang="python"
@@ -33,21 +31,11 @@
           />
         </div>
         <!-- INFO 输出部分 -->
-        <a
-          class="avatar"
-          v-if="Array.isArray(cell.outputs) && cell.outputs.length !== 0"
-        >
-          <span class="nf nf-mdi-robot"></span>
-        </a>
 
         <div
-          class="content"
+          class="content output"
           v-if="Array.isArray(cell.outputs) && cell.outputs.length !== 0"
         >
-          <a class="author">BOT</a>
-          <div class="metadata">
-            <span class="date">{{ cell.cell_type }}</span>
-          </div>
           <div
             v-for="(output, output_index) in cell.outputs"
             :key="output_index"
@@ -91,15 +79,9 @@
       </div>
 
       <!-- INFO 预览部分 -->
-      <div class="ui comment" v-if="input_content !== ''">
-        <a class="avatar">
-          <span class="nf nf-fa-user_circle_o preview"></span>
-        </a>
+      <div class="ui item" v-if="input_content !== ''">
         <div class="content">
-          <a class="author">预览</a>
-          <div class="metadata">
-            <span class="date">{{ type }}</span>
-          </div>
+          <span class="ui label circular">{{ type }}</span>
 
           <highlight-code v-if="type === 'code'" lang="python"
             >{{ input_content }}
@@ -251,49 +233,38 @@ a {
   color: black;
 }
 
-.ui.form textarea {
-  font-family: 'NFM', 'SCM', monospace;
-}
-
-.ui.comment >>> span.nf {
-  font-size: 30px;
-}
-
-.ui.comment >>> span.nf.nf-fa-user_circle_o {
-  color: #7f51ec;
-}
-
-.ui.comment >>> span.nf.nf-fa-user_circle_o.preview {
-  color: #ff5353;
-}
-
-.ui.comment >>> span.nf-mdi-robot {
-  color: rgba(24, 196, 124, 0.897);
-}
-
-.ui.comments >>> .comment {
-  padding: 5px;
-  padding-left: 20px;
+.ui.item {
+  padding: 10px;
+  border-left: 5px solid white;
   border-radius: 5px;
-  width: 173%;
 }
 
-.comment:hover {
-  background: rgba(0, 0, 0, 0.05);
+.ui.item:hover {
+  background: rgba(0, 0, 0, 0.1);
+  border-left: 5px solid red;
+  border-radius: 5px;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
-
-.ui.comment >>> .hljs {
+.ui.item:focus,
+.content:focus {
+  outline: none;
+}
+.ui.item:focus .ui.item {
+  background: rgba(0, 0, 0, 0.3);
+}
+.ui.item >>> .hljs {
   font-family: 'NFM', 'SCM', monospace;
   font-size: 1.1em;
   padding: 9px;
   border-radius: 5px;
 }
 
-.ui.comments .comment .actions a {
-  color: rgba(115, 41, 235, 0.644);
-}
 .markdown-body >>> pre {
   border-radius: 5px;
+}
+.ui.form textarea {
+  font-family: 'NFM', 'SCM', monospace;
+}
+.source {
 }
 </style>

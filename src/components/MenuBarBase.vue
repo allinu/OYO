@@ -5,10 +5,13 @@
         <img id="logo" src="@/assets/OYO LOGO.png" alt="LOGO" />
       </router-link>
       <router-link class="item" to="/OYO/contents">
-        <span class="ui medium text">文 件</span></router-link
+        <span class="ui medium text">文件</span></router-link
       >
       <router-link class="item" to="/OYO/stars"
-        ><span class="ui medium text">收 藏</span></router-link
+        ><span class="ui medium text">收藏</span></router-link
+      >
+      <router-link class="item" to="/OYO/kernel">
+        <span class="ui medium text">运行</span></router-link
       >
       <div class="right menu">
         <router-link class="ui item" to="/OYO/login">

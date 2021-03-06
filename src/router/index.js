@@ -7,6 +7,7 @@ import Stars from "@/views/Stars";
 import Login from "@/views/Login";
 import Love from "@/views/Love";
 import Image from "@/views/Image";
+import Kernel from "@/views/Kernel";
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,14 @@ const routes = [
     component: Image,
     meta: {
       title: "文件"
+    }
+  },
+  {
+    path: "/OYO/kernel*",
+    name: "Kernel",
+    component: Kernel,
+    meta: {
+      title: "运行"
     }
   },
   {
