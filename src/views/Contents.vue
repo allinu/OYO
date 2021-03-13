@@ -13,25 +13,36 @@
     </div>
     <div class="ui middle aligned list">
       <!-- INFO 目录 -->
-      <div class="ui item other" v-for="(dir, index) in dirs" :key="index">
+      <div
+        class="ui item other"
+        v-for="dir in dirs"
+        :key="dir.id"
+        @click="post_route(dir.name, 0)"
+      >
         <span class=".nf nf-mdi-folder" style="color: #0c85d0"></span>
-        <a @click="post_route(dir.name, 0)">{{ dir.name }}</a>
+        <a>{{ dir.name }}</a>
         <!-- <span class="right floated">{{ format_date(dir.last_modified) }}</span> -->
       </div>
       <!-- INFO Notebook Files -->
-      <div class="ui item other" v-for="(file, index) in nb_files" :key="index">
+      <div
+        class="ui item other"
+        v-for="file in nb_files"
+        :key="file.id"
+        @click="post_route(file.path, 1)"
+      >
         <span class=".nf nf-fa-file_code_o"></span>
-        <a @click="post_route(file.name, 1)">{{ file.name }}</a>
+        <a>{{ file.name }}</a>
         <span class="right floated">{{ format_date(file.last_modified) }}</span>
       </div>
       <!-- INFO 其他文件 -->
       <div
         class="ui item other"
-        v-for="(file, index) in other_files"
-        :key="index"
+        v-for="file in other_files"
+        :key="file.id"
+        @click="post_route(file.path, 2)"
       >
         <span class=".nf nf-fa-file_o"></span>
-        <a @click="post_route(file.name, 2)">{{ file.name }}</a>
+        <a>{{ file.name }}</a>
         <span class="right floated">{{ format_date(file.last_modified) }}</span>
       </div>
     </div>
@@ -197,6 +208,7 @@ a.section.nf {
   line-height: 25px;
   border-radius: 5px;
   font-size: 1.1em;
+  cursor: pointer;
 }
 .item.other:hover {
   background: rgba(0, 0, 0, 0.051);

@@ -196,13 +196,14 @@ export default {
   // TODO 建立socket链接发送代码
   created() {
     this.get_files()
-    setInterval(this.set_loader, 2000)
+    setInterval(this.set_loader, 1000)
   },
   methods: {
     get_files() {
       axios
         .get('/api/contents' + this.$route.params.pathMatch)
         .then((ans) => (this.ans = ans.data))
+      console.log(this.$route.params.pathMatch)
     },
     format_date(time) {
       return moment(time).format('YYYY/MM/DD HH:mm:ss')
@@ -258,13 +259,13 @@ a {
   padding: 9px;
   border-radius: 5px;
 }
-
+.ui.item >>> .hljs {
+  line-height: 1.4em;
+}
 .markdown-body >>> pre {
   border-radius: 5px;
 }
 .ui.form textarea {
   font-family: 'NFM', 'SCM', monospace;
-}
-.source {
 }
 </style>
