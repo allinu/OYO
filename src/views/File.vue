@@ -203,6 +203,7 @@ export default {
       axios
         .get('/api/contents' + this.$route.params.pathMatch)
         .then((ans) => (this.ans = ans.data))
+      console.log(this.ans)
       console.log(this.$route.params.pathMatch)
     },
     format_date(time) {
@@ -234,10 +235,22 @@ a {
   color: black;
 }
 
+#code,
+#markdown {
+  margin-bottom: 2px;
+}
+
+label {
+  padding-left: 3px;
+  line-height: 2em;
+}
 .ui.item {
   padding: 10px;
   border-left: 5px solid white;
   border-radius: 5px;
+}
+.ui.item:last-child {
+  padding-bottom: 10px;
 }
 
 .ui.item:hover {
